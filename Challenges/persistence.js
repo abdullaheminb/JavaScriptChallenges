@@ -9,18 +9,30 @@
 //Return its additive persistence.
 //Return its multiplicative persistence.
 
+//I kept given number as constant so I will always have a chance to reach to it.
 const inputNumber = 1287643;
+
+//will use this at additive
 let shadowNumber = inputNumber;
+
+//will use this at multiplicative
 let shadowNumberC = inputNumber;
+
+//this is for storing the digits
 let digitsInNumber = []
-let sum = 0;
+
+//this is for storing the result for additive
 let result = 0;
+
+//this is for storing the result for multiplicative
 let resultC = 1;
 
+//this function helps me to get last digit
 function getLastDigit(num){
     return num % 10;
 }
 
+//this function helps me to decrease the number
 function decreaseNumber(num){
     return Math.floor(num/10);
 }
@@ -38,11 +50,17 @@ do{
         result += digit
     });
 
+    //clearing digits array so it wont mix with previous result
     digitsInNumber = [];
+    
+    //turning result into new number
     shadowNumber = result;
+    
+    //cleaning the result
     result = 0;
 }while (shadowNumber >= 10)
 
+//pretty much same thing. Instead of adding all the numbers in array I am multiplicating in here.
 do{
     //get the digits in an array
     do{
@@ -60,6 +78,8 @@ do{
     resultC = 0;
 }while (shadowNumberC >= 10)
 
+
+//print result to console.
 console.log("Cumulative is = " + shadowNumberC);
 
 console.log("Additive is = " + shadowNumber);
