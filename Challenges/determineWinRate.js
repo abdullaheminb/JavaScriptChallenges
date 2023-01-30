@@ -12,7 +12,7 @@ playTime = 220;
 const usersChoice = "Rock";
 
 //determine who won
-function whoWon(computer, human){
+function humanWon(computer, human){
     if (computer == human){
         return 0;
     }
@@ -40,7 +40,7 @@ function whoWon(computer, human){
     else if( computer == "Scissor" && human == "Rock"){
         return 1;
     }
-}//whoWon
+}//humanWon
 
 // Designate which number gets to which choice for computer.
 function determineComputerMove(){
@@ -70,7 +70,7 @@ while (i<=playTime){
     let computersChoice = determineComputerMove();
 
     //determine who won
-    humanWonCount += whoWon(computersChoice, usersChoice);
+    humanWonCount += humanWon(computersChoice, usersChoice);
     i++
     
 }//while loop
